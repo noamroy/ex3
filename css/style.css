@@ -1,3 +1,4 @@
+/* GENERAL ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 * {
     margin: 0;
     padding: 0;  
@@ -7,6 +8,25 @@ header, main, aside, footer, nav{
     margin: 0px auto;
     font-family: Arial, Helvetica, sans-serif;
 }
+.wrapper{
+    width: 1000px;
+    margin: 0px auto;
+    display: flex;
+}
+section.squares{
+    display: flex;
+    flex-wrap: wrap;
+    width: 235px;
+    height: 235px;
+    /*background-color: purple;*/
+    justify-content: space-between;
+    align-content: space-between;
+}
+section.squares>div{
+    width: 100px;
+    height: 100px;
+}
+/* HEADER ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 header{    
     background-color: darkgray;
     height: 192px;
@@ -14,7 +34,7 @@ header{
 header.layout2{
     width: 1400px;
 }
-header>img{
+header>a>img{
     position: relative;
     height: 80px;
     width: 80px;
@@ -24,45 +44,39 @@ header>img{
     margin-left: -40px;
     background: none;
 }
+/* NAV ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 nav{
     background-color: black;
     height: 60px;
 }
 nav.layout2{
     height: 758px;
-    width: 150px;
 }
 nav>ul{
+    align-items: center;
+    list-style: none;
+}
+nav.layout1>ul{
     display: flex;
-    margin: 0px auto;
-    width: 1000px;
-    text-decoration: none;  
+    padding-left: 80px;
+    height: 60px;
 }
 nav.layout2>ul{
-    margin: 0px;
     width: 150px;
-    flex-wrap: wrap;
-    color: white;
 }
-nav>ul>li{
-    width: 230px;
+nav.layout1>ul>li{
+    width: 235px;
     height: 40px;
-    margin-left: 40px;
-    margin-top: 10px;
-    text-decoration: none;
+    text-align: center;
 }
 nav.layout2>ul>li{
-    margin: 0px;
-    width: 150px;
     height: 55px;
-    flex-wrap: wrap;
 }
 nav>ul>li>a{
     position: relative;
+    top: 12px;
     text-decoration: none;
     color: white;
-    top: 15px;
-    left: 80px;
 }
 nav.layout2>ul>li>a{
     top: 20px;
@@ -74,39 +88,65 @@ nav>ul>li>a:hover{
 #selected{
     background-color: blue;
 }
-#wrapper{
-    width: 1000px;
-    margin: 0px auto;
-    display: flex;
-}
+/* MAIN ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 main{
     /*background-color:orange;*/
-    margin-left: 0px;
+    display: flex;
+}
+main.layout1{
     width: 750px;
+    height: 697px;
+    justify-content: space-between;
 }
 main.layout2{
-    width: 600px;
-}
-main>section.red_square{
-    display: flex;
-    flex-wrap: wrap;
-    width: 275px;
-    height: 275px;
-    /*background-color: blue;*/
-}
-main.layout2>section{
-    display: flex;
-    flex-wrap: wrap;
-    width: 560px;
+    width: 250px;
     height: 758px;
-    /*background-color: chocolate;*/
+    align-items: flex-end;
+    justify-content: center;
+    background-color: lightgrey;
+}
+#top-left{
+    margin-left: 40px;
+    margin-top: 25px;
+}
+#bot-right{
+    align-self: flex-end;
+    margin-right: 25px;
+    margin-bottom: 25px;
+}
+#bot{
+    margin-bottom: 10px;
+}
+main.layout1>section>div{
+    background-color: red;
 }
 main.layout2>section>div{
-    margin-top: 20px;
-    margin-left: 10px;
-    width: 265px;
-    height: 100px;
     background-color: green;
+}
+/* ASIDE ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+aside.layout1{
+    width: 250px;
+    background-color: grey;
+    display: flex;
+}
+aside.layout2{
+    width: 600px;
+    display: flex;
+    flex-wrap: wrap;
+}
+aside.layout1>div{
+    position: relative;
+    top: 175px;
+    left: 60px;
+    width: 175px;
+    height: 80px;
+    background-color: red; 
+}
+aside.layout2>div{
+    margin-top: 20px;
+    margin-left: 15px;
+    background-color: green;
+    width: 270px;
 }
 #layout2-a{
     height: 320px;
@@ -118,57 +158,10 @@ main.layout2>section>div{
     height: 412px;
 }
 #layout2-d{
-    height: 270px;
+    height: 365px;
     margin-top: -50px;
 }
-#top-left{
-    margin-left:15px;
-    margin-top: 0px;
-}
-#bot-right{
-    margin-left: 480px;
-    margin-top: 150px;
-}
-main>section.red_square>div{
-    width: 100px;
-    height: 100px;
-    margin-top:25px;
-    margin-left:25px;
-    background-color: red;
-}
-aside{
-    display: flex;
-    background-color: grey;
-    width: 250px;
-}
-aside.layout2{
-    align-items: flex-end;
-    background-color: lightgray;
-}
-aside>section.red_square{
-    display: flex;
-    flex-wrap: wrap;
-    width: 250px;
-    height: 250px;
-    justify-content:space-between;
-}
-.layout2-left{
-    margin-top: 30px;
-}
-aside>section.red_square>div{
-    margin: 5px;
-    width: 100px;
-    height: 100px;
-    background-color: green;
-}
-aside>div.malben{
-    position: relative;
-    top: 175px;
-    left: 60px;
-    width: 175px;
-    height: 80px;
-    background-color: red; 
-}
+/* FOOTER ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 footer{    
     background-color: darkgray;
     height: 50px;
@@ -182,5 +175,11 @@ footer.layout2{
     margin-left: -700px;
     width: 1400px;
 
+}
+#scroll{
+    padding-top: 1px;
+    width: 100%;
+    height: 500px;
+    background-color:white;
 }
 
