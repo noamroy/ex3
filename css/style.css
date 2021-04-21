@@ -13,6 +13,11 @@ header, main, aside, footer, nav{
     margin: 0px auto;
     display: flex;
 }
+.wrapper_block{
+    width: 1000px;
+    margin: 0px auto;
+    display: block;
+}
 section.squares{
     display: flex;
     flex-wrap: wrap;
@@ -64,6 +69,11 @@ nav.layout1>ul{
 nav.layout2>ul{
     width: 150px;
 }
+nav.layout3>ul{
+    display: flex;
+    justify-content: center;
+    height: 60px;
+}
 nav.layout1>ul>li{
     width: 235px;
     height: 40px;
@@ -72,11 +82,19 @@ nav.layout1>ul>li{
 nav.layout2>ul>li{
     height: 55px;
 }
+nav.layout3>ul>li{
+    text-align: center;
+    height: 60px;
+    width: 215px;
+}
 nav>ul>li>a{
     position: relative;
     top: 12px;
     text-decoration: none;
     color: white;
+}
+nav.layout3>ul>li>a{
+    top: 22px;
 }
 nav.layout2>ul>li>a{
     top: 20px;
@@ -105,6 +123,10 @@ main.layout2{
     justify-content: center;
     background-color: lightgrey;
 }
+main.layout3{
+    display: flex;
+    flex-wrap: wrap;
+}
 #top-left{
     margin-left: 40px;
     margin-top: 25px;
@@ -122,6 +144,52 @@ main.layout1>section>div{
 }
 main.layout2>section>div{
     background-color: green;
+}
+main.layout3>div{
+    height: 350px;
+    width: 333.333px;
+}
+main.layout3>div>img.star{
+    position: relative;
+    height: 50px;
+    width: 50px;
+    left: 275px;
+    top: 5px;
+    background: none;
+}
+main.layout3>div.clicked>img.star{
+    position: relative;
+    height: 0px;
+    width: 0px;
+    left: 275px;
+    top: 5px;
+    background: none;
+}
+main.layout3>div>img.strawberry{
+    position: relative;
+    height: 0px;
+    width: 0px;
+    left: 0px;
+    top: 0px;
+    background: none;
+}
+main.layout3>div.clicked>img.strawberry{
+    position: relative;
+    height: 350px;
+    width: 333.333px;
+    left: 0px;
+    top: 0px;
+    background: white; 
+}
+#plus{
+    position: relative;
+    height: 100px;
+    width: 100px;
+    left: 50%;
+    margin-left: -50px;
+    top: 50%;
+    margin-top: -50px;
+    background: none;
 }
 /* ASIDE ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 aside.layout1{
@@ -182,4 +250,36 @@ footer.layout2{
     height: 500px;
     background-color:white;
 }
-
+/*RESPONSIVE*/
+@media only screen and (max-width:480px) {
+    .wrapper_block{
+        width: 100%;
+    }
+    nav.layout3>ul.wrapper{
+        width:100%;
+    }
+    nav.layout3>ul>li{
+        width: 33%;
+    }
+}
+@media only screen and (min-width:481px) and (max-width:645px) {
+    .wrapper_block{
+        width: 100%;
+    }
+    nav.layout3>ul.wrapper{
+        width:100%;
+    }
+    nav.layout3>ul>li{
+        width: 33%;
+    }
+}
+@media only screen and (min-width:646px) and (max-width:999px) {
+    .wrapper_block{
+        width: 100%;
+    }
+    nav.layout3>ul.wrapper{
+        width:100%;
+    }
+}
+@media only screen and (min-width:1000px) {
+}
